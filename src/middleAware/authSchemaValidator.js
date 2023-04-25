@@ -12,7 +12,7 @@ export async function userSchemaValidation(req, res, next) {
     return res.status(400).send(errorsMessage)
   }
 
-  const checkUser = await usersCollection.findOne({ email: user.email })
+  const checkUser = await usersCollection.findOne({ email })
   if (checkUser) {
     return res.status(409).send('Esse usuário já existe')
   }
