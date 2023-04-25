@@ -15,7 +15,7 @@ app.use(cors());
 app.use(authRoutes);
 app.use(transactionRoutes);
 
-const PORT = process.env.PORT || 5007;
+const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => {
 console.log(`Server listening on port ${PORT}`);
 });
