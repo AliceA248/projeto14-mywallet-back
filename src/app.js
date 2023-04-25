@@ -1,21 +1,21 @@
-import express from "express"
-import cors from "cors"
-import { MongoClient } from "mongodb"
-import dotenv from "dotenv"
-import AuthRoutes from "./routes/AuthRoutes.js"
+import express from "express";
+import cors from "cors";
+import dotenv from "dotenv";
+
 
 dotenv.config();
 
-// Criação do servidor
-const app = express()
+import authRoutes from "./routes/authRoutes.js";
+import transactionRoutes from "./routes/transaction.js";
 
-// Configurações
-app.use(express.json())
-app.use(cors())
-app.use([AuthRoutes])
+const app = express();
 
+app.use(express.json());
+app.use(cors());
+app.use(authRoutes);
+app.use(transactionRoutes);
 
-  // Deixa o app escutando, à espera de requisições
-  const port = process.env.PORT ||  5001;
-  app.listen(port, () => console.log(`Servidor rodando na porta ${port}`))
-
+const PORT = process.env.PORT || 5007;
+app.listen(PORT, () => {
+console.log(`Server listening on port ${PORT}`);
+});

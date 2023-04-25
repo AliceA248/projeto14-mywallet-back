@@ -1,10 +1,16 @@
-import { Router } from "express";
-import { signIn, signUp } from "../controllers/AuthController.js";
-import { userValidation, signInValidation } from "../middleAware/AuthValidation.js";
+import { Router } from 'express'
+import {
+  createTransaction,
+  findTransactions
+} from '../controllers/transaction.js'
+import { authRoutesValidation } from "../middleAware/authSchemaValidator.js"
+import { transactionSchemaValidation } from '../middleAware/transaction.js'
 
-const authRouter = Router()
+const router = Router()
 
-Router.post("/sign-up", userValidation, signUp)
-Router.post("/sign-in", signInValidation, signIn)
+router.use(authRoutesValidation)
+router.post("/transactions", transactionSchemaValidation, createTransaction)
+router.get("/transactions", findTransactions)
 
-export default Router;
+export default router
+
