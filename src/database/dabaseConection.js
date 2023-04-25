@@ -9,7 +9,7 @@ async function connect() {
     await mongoClient.connect()
     console.log('Conectou com o mongoDB')
   } catch (error) {
-    console.error(error)
+    console.error('Erro ao conectar com o MongoDB:', error)
   }
 }
 
@@ -19,3 +19,4 @@ export const db = mongoClient.db()
 export const usersCollection = db.collection('users')
 export const sessionsCollection = db.collection('sessions')
 export const transactionsCollection = db.collection('transactions')
+
