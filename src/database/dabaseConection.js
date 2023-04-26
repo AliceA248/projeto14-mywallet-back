@@ -1,22 +1,21 @@
-import { MongoClient } from 'mongodb'
-import dotenv from 'dotenv'
-dotenv.config()
+import { MongoClient } from "mongodb";
+import dotenv from "dotenv";
 
-const mongoClient = new MongoClient(process.env.DATABASE_URL)
+dotenv.config();
 
-async function connect() {
+async function connectToDatabase() {
+  const client = new MongoClient(process.env.DATABASE_URL);
   try {
-    await mongoClient.connect()
-    console.log('Conectou com o mongoDB')
-  } catch (error) {
-    console.error('Erro ao conectar com o MongoDB:', error)
+    await client.connect();
+    console.log("Connected to MongoDB");
+    return client.db();
+  } catch (err) {
+    console.log(err.message);
+    client.close();
+    process.exit(1);
   }
 }
 
-connect()
+const db = await connectToDatabase();
 
-export const db = mongoClient.db()
-export const usersCollection = db.collection('users')
-export const sessionsCollection = db.collection('sessions')
-export const transactionsCollection = db.collection('transactions')
-
+export default db;

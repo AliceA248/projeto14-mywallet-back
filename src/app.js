@@ -1,21 +1,12 @@
-import express from "express";
+import express, { json } from "express";
 import cors from "cors";
-import dotenv from "dotenv";
 
-
-dotenv.config();
-
-import authRoutes from "./routes/authRoutes.js";
-import transactionRoutes from "./routes/transaction.js";
+import router from "./Routes/route.js"
 
 const app = express();
 
-app.use(express.json());
 app.use(cors());
-app.use(authRoutes);
-app.use(transactionRoutes);
+app.use(json());
+app.use(router);
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-console.log(`Server listening on port ${PORT}`);
-});
+export default app;
