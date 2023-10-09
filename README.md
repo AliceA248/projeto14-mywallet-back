@@ -33,3 +33,41 @@ O MyWallet foi criado com o intuito pessoal de gerenciar gastos sem precisar fic
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 
 
+## Pré-requisitos
+
+Antes de começar, certifique-se de ter o seguinte instalado em seu sistema:
+
+- [Node.js](https://nodejs.org/): Plataforma JavaScript para desenvolvimento.
+- [npm](https://www.npmjs.com/) (gerenciador de pacotes Node.js): Vem com o Node.js.
+
+## Instalação
+
+Siga estas etapas para configurar e iniciar o projeto:
+
+1. **Clone o repositório:**
+
+   ```bash
+   git clone https://github.com/seu-usuario/nome-do-repositorio.git
+   cd nome-do-repositorio
+
+   
+## Instale as dependências:
+
+Execute o seguinte comando para instalar todas as dependências do projeto:
+
+* npm install
+
+
+## Configuração:
+
+Configure qualquer variável de ambiente ou configuração necessária para o seu projeto.
+
+Inicie o servidor:
+
+## Execute o seguinte comando para iniciar o servidor:
+
+* npm start
+
+O servidor estará rodando em http://localhost:3000 (ou outra porta, se especificada).
+
+
