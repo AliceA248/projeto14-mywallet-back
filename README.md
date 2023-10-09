@@ -47,8 +47,8 @@ Siga estas etapas para configurar e iniciar o projeto:
 1. **Clone o repositório:**
 
    ```bash
-   git clone https://github.com/seu-usuario/nome-do-repositorio.git
-   cd nome-do-repositorio
+   git clone git@github.com:AliceA248/projeto14-mywallet-back.git
+   cd projeto14-mywallet-back
 
    
 ## Instale as dependências:
